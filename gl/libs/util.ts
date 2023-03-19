@@ -8,7 +8,6 @@ export class Util {
       this._instance = new Util();
     }
 
-    // 生成済みのインスタンスを返す
     return this._instance;
   }
 

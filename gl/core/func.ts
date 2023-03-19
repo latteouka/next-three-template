@@ -3,7 +3,6 @@ import { Conf } from "./conf";
 
 export class Func {
   private static _instance: Func;
-  private _useFullScreen: boolean = !Conf.instance.IS_PC;
 
   constructor() {}
 
@@ -31,11 +30,7 @@ export class Func {
   }
 
   public sh(): number {
-    if (this._useFullScreen) {
-      return screen.height;
-    } else {
-      return window.innerHeight;
-    }
+    return window.innerHeight;
   }
 
   public screenOffsetY(): number {

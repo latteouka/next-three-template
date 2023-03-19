@@ -8,7 +8,6 @@ export class Display {
 
   init() {}
 
-  // 破棄
   public dispose() {
     this.opt = null;
     this.el = null;
@@ -52,12 +51,12 @@ export class Display {
     (this.el as HTMLElement).classList.add(c);
   }
 
-  public attachClass(el:any, c: string): void {
-    if(el != undefined) el.classList.add(c);
+  public attachClass(el: any, c: string): void {
+    if (el != undefined) el.classList.add(c);
   }
 
-  public detachClass(el:any, c: string): void {
-    if(el != undefined) el.classList.remove(c);
+  public detachClass(el: any, c: string): void {
+    if (el != undefined) el.classList.remove(c);
   }
 
   public removeClass(c: string): void {
@@ -66,15 +65,15 @@ export class Display {
 
   getWidth(el: Element): number {
     let val = document.defaultView?.getComputedStyle(el, null).width;
-    return Number(val?.replace('px', ''));
+    return Number(val?.replace("px", ""));
   }
 
   getHeight(el: Element | null): number {
-    if(el == null) {
-      return 0
+    if (el == null) {
+      return 0;
     } else {
       let val = document.defaultView?.getComputedStyle(el, null).height;
-      return Number(val?.replace('px', ''));
+      return Number(val?.replace("px", ""));
     }
   }
 
@@ -82,8 +81,8 @@ export class Display {
     const st = document.defaultView?.getComputedStyle(el, null);
     if (st != undefined) {
       return {
-        width: Number(st.width.replace('px', '')),
-        height: Number(st.height.replace('px', '')),
+        width: Number(st.width.replace("px", "")),
+        height: Number(st.height.replace("px", "")),
       };
     } else {
       return {};
@@ -114,12 +113,12 @@ export class Display {
     };
   }
 
-  protected _call(f:any, arg:any = null):void {
-    if(f != undefined) {
-      if(arg != null) {
-        f(arg)
+  protected _call(f: any, arg: any = null): void {
+    if (f != undefined) {
+      if (arg != null) {
+        f(arg);
       } else {
-        f()
+        f();
       }
     }
   }
