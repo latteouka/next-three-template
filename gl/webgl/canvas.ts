@@ -28,6 +28,7 @@ export class Canvas extends MyDisplay {
       antialias: true,
       preserveDrawingBuffer: true,
       powerPreference: "low-power",
+      alpha: true,
     };
 
     // 透過設定
@@ -69,7 +70,6 @@ export class Canvas extends MyDisplay {
     h: number = 10
   ) {
     const perspective = 400;
-
     camera.fov = (180 * (2 * Math.atan(h / 2 / perspective))) / Math.PI;
     camera.aspect = w / h;
     camera.position.z = perspective;

@@ -270,4 +270,9 @@ export class Util {
     );
     return isTouch;
   }
+
+  ev(eventName: string, data: any) {
+    const e = new CustomEvent(eventName, { detail: data });
+    document.dispatchEvent(e);
+  }
 }
